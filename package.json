@@ -1,5 +1,5 @@
 {
-  "name": "@y/source",
+  "name": "@monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {},
@@ -12,6 +12,8 @@
   "devDependencies": {
     "@babel/core": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "@nrwl/eslint-plugin-nx": "^18.3.3",
+    "@nrwl/linter": "^18.3.3",
     "@nx/eslint": "18.3.3",
     "@nx/eslint-plugin": "18.3.3",
     "@nx/js": "18.3.3",
@@ -38,9 +40,11 @@
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "^9.0.11",
     "jsdom": "~22.1.0",
+    "lint-staged": "^15.2.2",
     "nx": "18.3.3",
-    "prettier": "^2.6.2",
+    "prettier": "^2.8.8",
     "typescript": "~5.4.2",
     "vite": "~5.0.0",
     "vitest": "^1.3.1"
