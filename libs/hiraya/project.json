@@ -1,0 +1,9 @@
+{
+  "name": "hiraya",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/hiraya/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project hiraya --web",
+  "targets": {}
+}
