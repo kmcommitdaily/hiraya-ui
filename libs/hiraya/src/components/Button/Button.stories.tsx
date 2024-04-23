@@ -1,18 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from './index';
+import { ButtonUsage } from './index';
 
 //👇 This default export determines where your story goes in the story list
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof ButtonUsage> = {
+  component: ButtonUsage,
   title: 'Button',
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof ButtonUsage>;
 
-export const FirstStory: Story = {
+export const Primary: Story = {
   args: {
-    //👇 The args you need here will depend on your component
+    label: 'Click me',
+    variant: 'contained',
   },
 };
