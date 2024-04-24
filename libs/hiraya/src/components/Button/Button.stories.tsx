@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ButtonUsage } from './index';
+import { Button } from './index';
 
 //👇 This default export determines where your story goes in the story list
-const meta: Meta<typeof ButtonUsage> = {
-  component: ButtonUsage,
+const meta: Meta<typeof Button> = {
+  component: Button,
   title: 'Button',
+  tags: ['autodocs'],
 };
-
 export default meta;
-type Story = StoryObj<typeof ButtonUsage>;
+type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Demo: Story = {
   args: {
     label: 'Click me',
-    variant: 'contained',
+    variantStyle: 'primary',
   },
 };
