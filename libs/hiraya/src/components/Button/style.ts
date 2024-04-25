@@ -1,30 +1,29 @@
 import { Button as MUIButton, styled } from '@mui/material';
 
-import {
-  backgroundStyle,
-  textColorStyle,
-  borderStyle,
-  hoverBackgroundStyle,
-} from './theme';
+import { variants, buttonSizesStyle, buttonWidthStyle } from './theme';
 
 interface ButtonProps {
   label?: string;
   variantStyle?: 'primary' | 'secondary' | 'tertiary';
+  buttonSizes?: 'small' | 'medium' | 'large';
+  buttonWidthSizes?: 'isFullWidth' | 'iconOnly' | 'default';
 }
 
-const ButtonStyled = styled(MUIButton)<ButtonProps>(({ variantStyle }) => ({
-  backgroundColor: backgroundStyle[variantStyle || 'primary'], // Default color if no variantStyle is provided
-  color: textColorStyle[variantStyle || 'primary'],
-  padding: '10px 20px',
-  height: '48px',
-  width: '93px',
-  borderRadius: '5px',
-  border: borderStyle[variantStyle || 'primary'],
-  cursor: 'pointer',
-  transition: 'background-color 0.3s ease',
-  '&:hover': {
-    backgroundColor: hoverBackgroundStyle[variantStyle || 'primary'],
-  },
-}));
+const ButtonStyled = styled(MUIButton)<ButtonProps>(
+  ({ variantStyle, buttonSizes, buttonWidthSizes }) => ({
+    backgroundColor: variants[variantStyle || 'primary'].background,
+    color: variants[variantStyle || 'primary'].text,
+    padding: '10px 20px',
+    '&:height': buttonSizesStyle[buttonSizes || 'small'].height,
+    '&:width': buttonWidthStyle[buttonWidthSizes || 'default'],
+    borderRadius: '5px',
+    border: variants[variantStyle || 'primary'].border,
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
+    '&:hover': {
+      backgroundColor: variants[variantStyle || 'primary'].hoverBackground,
+    },
+  }),
+);
 
 export { ButtonStyled, ButtonProps };

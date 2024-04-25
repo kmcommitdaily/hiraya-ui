@@ -1,25 +1,43 @@
-const backgroundStyle = {
-  primary: '#305EFF',
-  secondary: '#FFFFF',
-  tertiary: '#BDBDBD ',
+const variants = {
+  primary: {
+    background: '#305EFF',
+    text: 'white',
+    border: 'none',
+    hoverBackground: '#2950DA',
+  },
+  secondary: {
+    background: '#FFFFF',
+    text: '#305EFF',
+    border: '1px solid #305EFF',
+    hoverBackground: '#9FA8DA',
+  },
+  tertiary: {
+    background: '#BDBDBD',
+    text: '#333333',
+    border: 'none',
+    hoverBackground: '#9E9E9E',
+  },
 };
 
-const textColorStyle = {
-  primary: 'white',
-  secondary: '#305EFF',
-  tertiary: '#333333 ',
+const buttonSizesStyle = {
+  small: {
+    height: '32px',
+    width: '88px',
+  },
+  medium: {
+    height: '36px',
+    width: '88px',
+  },
+  large: {
+    height: '48px',
+    width: '92px',
+  },
 };
 
-const borderStyle = {
-  primary: 'none',
-  tertiary: 'none',
-  secondary: '1px #305EFF solid ',
+const buttonWidthStyle = {
+  default: '92px',
+  isFullWidth: '100%',
+  iconOnly: '48px',
 };
 
-const hoverBackgroundStyle = {
-  primary: '#2950DA',
-  secondary: '#9FA8DA',
-  tertiary: '#9E9E9E ',
-};
-
-export { backgroundStyle, textColorStyle, borderStyle, hoverBackgroundStyle };
+export { variants, buttonSizesStyle, buttonWidthStyle };

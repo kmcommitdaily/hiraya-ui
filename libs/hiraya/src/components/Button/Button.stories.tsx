@@ -8,6 +8,9 @@ const meta: Meta<typeof Button> = {
   component: Button,
   title: 'Button',
   tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
 };
 export default meta;
 type Story = StoryObj<typeof Button>;
@@ -17,8 +20,15 @@ export const Demo: Story = {
     label: 'Button',
     variantStyle: 'primary',
   },
+};
 
-  parameters: {
-    layout: 'centered',
+export const Primary: Story = {
+  args: {
+    buttonWidthSizes: 'isFullWidth',
+    // {
+    //   isFullWidth: '',
+    //   iconOnly: '',
+    // },
+    // color: '',
   },
 };
