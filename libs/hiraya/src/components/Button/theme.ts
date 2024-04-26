@@ -1,4 +1,4 @@
-const variants = {
+const variantStyle = {
   primary: {
     background: '#305EFF',
     text: 'white',
@@ -19,25 +19,16 @@ const variants = {
   },
 };
 
-const buttonSizesStyle = {
-  small: {
-    height: '32px',
-    width: '88px',
-  },
-  medium: {
-    height: '36px',
-    width: '88px',
-  },
-  large: {
-    height: '48px',
-    width: '92px',
-  },
+const buttonHeightStyle = {
+  small: '32px !important',
+  medium: '36px  !important',
+  large: '48px  !important',
 };
 
 const buttonWidthStyle = {
   default: '92px',
-  isFullWidth: '100%',
+  isFullWidth: '112px',
   iconOnly: '48px',
 };
 
-export { variants, buttonSizesStyle, buttonWidthStyle };
+export { variantStyle, buttonHeightStyle, buttonWidthStyle };
