@@ -1,5 +1,5 @@
 import { Button as MUIButton, styled } from '@mui/material';
-
+// import IconButton from '@mui/material/IconButton';
 import { variantStyle, buttonHeightStyle, buttonWidthStyle } from './theme';
 
 interface ButtonProps {
@@ -13,7 +13,7 @@ const ButtonStyled = styled(MUIButton)<ButtonProps>(
   ({ variants, buttonHeightSizes, buttonWidthSizes }) => ({
     backgroundColor: variantStyle[variants || 'primary'].background,
     color: variantStyle[variants || 'primary'].text,
-    padding: '10px 20px',
+    padding: '0',
     '&.MuiButtonBase-root': {
       width: buttonWidthStyle[buttonWidthSizes || 'default'],
     },
