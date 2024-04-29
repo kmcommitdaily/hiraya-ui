@@ -22,20 +22,14 @@ const variantStyle = {
   },
 };
 
-const buttonHeightStyle = {
+const buttonSizeStyle = {
   small: '32px !important',
   medium: '36px  !important',
   large: '48px  !important',
 };
 
-const buttonWidthStyle = {
-  default: '92px',
-  isFullWidth: '112px',
-  iconOnly: '48px',
-};
-
 const buttonIconOnly = (): ReactNode => {
-  return <FileDownloadIcon />;
+  return <FileDownloadIcon fontSize="small" />;
 };
 
-export { variantStyle, buttonHeightStyle, buttonWidthStyle, buttonIconOnly };
+export { variantStyle, buttonSizeStyle, buttonIconOnly };

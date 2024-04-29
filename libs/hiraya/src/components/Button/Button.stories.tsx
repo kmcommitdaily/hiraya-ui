@@ -19,5 +19,6 @@ export const Demo: Story = {
     variants: 'primary',
     buttonHeightSizes: 'small',
     isFullWidth: false,
+    iconOnly: true,
   },
 };
