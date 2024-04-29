@@ -18,12 +18,6 @@ export const Demo: Story = {
     label: 'Button',
     variants: 'primary',
     buttonHeightSizes: 'small',
-    buttonWidthSizes: 'default',
-  },
-};
-
-export const Primary: Story = {
-  args: {
-    buttonWidthSizes: 'isFullWidth',
+    isFullWidth: false,
   },
 };

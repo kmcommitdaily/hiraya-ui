@@ -1,26 +1,13 @@
 import { ButtonProps, ButtonStyled } from './style';
-import { buttonIconOnly } from './theme';
 
-const Button: React.FC<ButtonProps> = ({
-  buttonWidthSizes,
-  label,
-  ...props
-}) => {
-  const renderContent = () => {
-    if (buttonWidthSizes === 'iconOnly') {
-      return buttonIconOnly();
-    } else {
-      return label;
-    }
-  };
-
+const Button: React.FC<ButtonProps> = ({ label, ...props }) => {
   return (
     <ButtonStyled
       variants={props.variants}
       buttonHeightSizes={props.buttonHeightSizes}
-      buttonWidthSizes={buttonWidthSizes}
+      isFullWidth={props.isFullWidth}
     >
-      {renderContent()}
+      {label}
     </ButtonStyled>
   );
 };

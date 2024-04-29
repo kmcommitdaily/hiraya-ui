@@ -1,21 +1,21 @@
 import { Button as MUIButton, styled } from '@mui/material';
-// import IconButton from '@mui/material/IconButton';
-import { variantStyle, buttonHeightStyle, buttonWidthStyle } from './theme';
+
+import { variantStyle, buttonHeightStyle } from './theme';
 
 interface ButtonProps {
   label?: string;
   variants?: keyof typeof variantStyle;
   buttonHeightSizes?: keyof typeof buttonHeightStyle;
-  buttonWidthSizes?: keyof typeof buttonWidthStyle;
+  isFullWidth?: boolean;
 }
 
 const ButtonStyled = styled(MUIButton)<ButtonProps>(
-  ({ variants, buttonHeightSizes, buttonWidthSizes }) => ({
+  ({ variants, buttonHeightSizes, isFullWidth }) => ({
     backgroundColor: variantStyle[variants || 'primary'].background,
     color: variantStyle[variants || 'primary'].text,
     padding: '0',
     '&.MuiButtonBase-root': {
-      width: buttonWidthStyle[buttonWidthSizes || 'default'],
+      width: isFullWidth ? '112px' : '92px',
     },
     '&.MuiButton-root': {
       height: buttonHeightStyle[buttonHeightSizes || 'large'],
