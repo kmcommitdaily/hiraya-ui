@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
+
 import { Button } from './index';
 
 const meta: Meta<typeof Button> = {
@@ -19,7 +19,6 @@ export const Demo: Story = {
     variants: 'primary',
     buttonHeightSizes: 'small',
     buttonWidthSizes: 'default',
-    buttonIcon: <FileDownloadIcon />,
   },
 };
 

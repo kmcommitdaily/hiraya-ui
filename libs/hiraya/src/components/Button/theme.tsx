@@ -1,3 +1,5 @@
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { ReactNode } from 'react';
 const variantStyle = {
   primary: {
     background: '#305EFF',
@@ -31,4 +33,8 @@ const buttonWidthStyle = {
   iconOnly: '48px',
 };
 
-export { variantStyle, buttonHeightStyle, buttonWidthStyle };
+const buttonIconOnly = (): ReactNode => {
+  return <FileDownloadIcon />;
+};
+
+export { variantStyle, buttonHeightStyle, buttonWidthStyle, buttonIconOnly };

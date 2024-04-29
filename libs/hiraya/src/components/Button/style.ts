@@ -1,14 +1,12 @@
 import { Button as MUIButton, styled } from '@mui/material';
 // import IconButton from '@mui/material/IconButton';
 import { variantStyle, buttonHeightStyle, buttonWidthStyle } from './theme';
-import { ReactNode } from 'react';
 
 interface ButtonProps {
   label?: string;
   variants?: keyof typeof variantStyle;
   buttonHeightSizes?: keyof typeof buttonHeightStyle;
   buttonWidthSizes?: keyof typeof buttonWidthStyle;
-  buttonIcon?: ReactNode;
 }
 
 const ButtonStyled = styled(MUIButton)<ButtonProps>(
