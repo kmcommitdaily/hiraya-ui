@@ -1,12 +1,15 @@
-import { Button } from '@mui/material';
+import { ButtonProps, ButtonStyled } from './style';
 
-interface ButtonProps {
-  label: string;
-  variant?: 'text' | 'outlined' | 'contained';
-}
+const Button: React.FC<ButtonProps> = ({ label, icon, ...props }) => {
+  const renderContent = () => {
+    return icon ? icon : label;
+  };
 
-const ButtonUsage: React.FC<ButtonProps> = ({ ...props }) => {
-  return <Button variant={props.variant}>{props.label}</Button>;
+  return (
+    <ButtonStyled {...props} icon={icon}>
+      {renderContent()}
+    </ButtonStyled>
+  );
 };
 
-export { ButtonUsage };
+export { Button };

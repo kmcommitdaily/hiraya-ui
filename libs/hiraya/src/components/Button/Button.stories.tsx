@@ -1,19 +1,32 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { Button } from './index';
 
-import { ButtonUsage } from './index';
-
-//👇 This default export determines where your story goes in the story list
-const meta: Meta<typeof ButtonUsage> = {
-  component: ButtonUsage,
+const meta: Meta<typeof Button> = {
+  component: Button,
   title: 'Button',
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
+};
+export default meta;
+type Story = StoryObj<typeof Button>;
+
+export const Demo: Story = {
+  args: {
+    label: 'Button',
+    variants: 'primary',
+    buttonSizes: 'small',
+    isFullWidth: false,
+  },
 };
 
-export default meta;
-type Story = StoryObj<typeof ButtonUsage>;
-
-export const Primary: Story = {
+export const IconButton: Story = {
   args: {
-    label: 'Click me',
-    variant: 'contained',
+    variants: 'primary',
+    buttonSizes: 'small',
+    isFullWidth: false,
+    icon: <FileDownloadIcon />,
   },
 };
