@@ -1,7 +1,7 @@
 const variantStyle = {
   primary: {
     background: '#305EFF',
-    text: 'white',
+    color: 'white',
     border: 'none',
     hoverBackground: '#2950DA',
   },
@@ -20,9 +20,18 @@ const variantStyle = {
 };
 
 const buttonSizeStyle = {
-  small: '32px !important',
-  medium: '36px  !important',
-  large: '48px  !important',
+  small: {
+    padding: '6px 4px',
+    fontSize: '10px',
+  },
+  medium: {
+    padding: '8px 10px',
+    fontSize: '16px',
+  },
+  large: {
+    padding: '10px 16px',
+    fontSize: '20px',
+  },
 };
 
 export { variantStyle, buttonSizeStyle };
