@@ -1,6 +1,6 @@
 import { Button as MUIButton, styled } from '@mui/material';
 
-import { variantStyle, buttonSizeStyle } from './theme';
+import { variantStyle, buttonSizeStyle, disabledState } from './theme';
 import { ReactNode } from 'react';
 
 interface ButtonProps {
@@ -10,15 +10,20 @@ interface ButtonProps {
   isFullWidth?: boolean;
   icon?: ReactNode;
   focus?: boolean;
+  disabled?: boolean;
 }
 
 const ButtonStyled = styled(MUIButton)<ButtonProps>(
-  ({ variants, buttonSizes, isFullWidth, icon, focus }) => ({
-    ...variantStyle[variants || 'primary'],
+  ({ variants, buttonSizes, isFullWidth, icon, focus, disabled }) => ({
     ...buttonSizeStyle[buttonSizes || 'large'],
+
     '&.MuiButton-root': {
       width: isFullWidth ? '100%' : buttonSizeStyle[buttonSizes || 'large'],
     },
+
+    ...(disabled
+      ? { ...disabledState }
+      : { ...variantStyle[variants || 'primary'] }),
 
     borderRadius: '5px',
 

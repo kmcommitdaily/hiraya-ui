@@ -8,6 +8,7 @@ const variantStyle = {
   secondary: {
     background: '#FFFFF',
     color: '#305EFF',
+
     border: '1px solid #305EFF',
     hoverBackground: '#b4bdec',
   },
@@ -17,6 +18,12 @@ const variantStyle = {
     border: 'none',
     hoverBackground: '#9E9E9E',
   },
+};
+
+const disabledState = {
+  background: '#E0E0E0',
+  color: '#93a8f1',
+  border: 'none',
 };
 
 const buttonSizeStyle = {
@@ -34,4 +41,4 @@ const buttonSizeStyle = {
   },
 };
 
-export { variantStyle, buttonSizeStyle };
+export { variantStyle, buttonSizeStyle, disabledState };
