@@ -9,20 +9,26 @@ interface ButtonProps {
   buttonSizes?: keyof typeof buttonSizeStyle;
   isFullWidth?: boolean;
   icon?: ReactNode;
+  focus?: boolean;
 }
 
 const ButtonStyled = styled(MUIButton)<ButtonProps>(
-  ({ variants, buttonSizes, isFullWidth, icon }) => ({
+  ({ variants, buttonSizes, isFullWidth, icon, focus }) => ({
     ...variantStyle[variants || 'primary'],
-
+    ...buttonSizeStyle[buttonSizes || 'large'],
     '&.MuiButton-root': {
-      ...buttonSizeStyle[buttonSizes || 'large'],
+      width: isFullWidth ? '100%' : buttonSizeStyle[buttonSizes || 'large'],
     },
 
     borderRadius: '5px',
 
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
+
+    '&:focus': {
+      boxShadow: '0 0 10px 5px #a9b7ea',
+      backgroundColor: variantStyle[variants || 'primary'].hoverBackground,
+    },
     '&:hover': {
       backgroundColor: variantStyle[variants || 'primary'].hoverBackground,
     },

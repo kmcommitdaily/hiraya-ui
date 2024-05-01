@@ -1,6 +1,6 @@
 import { ButtonProps, ButtonStyled } from './style';
 
-const Button: React.FC<ButtonProps> = ({ label, icon, ...props }) => {
+const Button: React.FC<ButtonProps> = ({ label, icon, focus, ...props }) => {
   const renderContent = () => {
     return icon ? icon : label;
   };

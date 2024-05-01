@@ -7,13 +7,13 @@ const variantStyle = {
   },
   secondary: {
     background: '#FFFFF',
-    text: '#305EFF',
+    color: '#305EFF',
     border: '1px solid #305EFF',
-    hoverBackground: '#9FA8DA',
+    hoverBackground: '#b4bdec',
   },
   tertiary: {
     background: '#BDBDBD',
-    text: '#333333',
+    color: '#333333',
     border: 'none',
     hoverBackground: '#9E9E9E',
   },

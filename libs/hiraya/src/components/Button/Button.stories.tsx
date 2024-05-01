@@ -18,7 +18,7 @@ export const Demo: Story = {
     label: 'Button',
     variants: 'primary',
     buttonSizes: 'small',
-    isFullWidth: false,
+    isFullWidth: true,
   },
 };
 
