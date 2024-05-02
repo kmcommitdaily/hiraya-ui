@@ -20,6 +20,12 @@ const variantStyle = {
   },
 };
 
+const focusStyle = {
+  '&:focus': {
+    boxShadow: '0 0 10px 5px #a9b7ea',
+  },
+};
+
 const disabledState = {
   background: '#E0E0E0',
   color: '#93a8f1',
@@ -41,4 +47,4 @@ const buttonSizeStyle = {
   },
 };
 
-export { variantStyle, buttonSizeStyle, disabledState };
+export { variantStyle, buttonSizeStyle, disabledState, focusStyle };
