@@ -27,6 +27,6 @@ export const IconButton: Story = {
     variants: 'primary',
     buttonSizes: 'small',
     isFullWidth: false,
-    icon: <FileDownloadIcon />,
+    icon: <FileDownloadIcon fontSize="small" />,
   },
 };

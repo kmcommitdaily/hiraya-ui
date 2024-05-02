@@ -18,11 +18,12 @@ interface ButtonProps {
 }
 
 const ButtonStyled = styled(MUIButton)<ButtonProps>(
-  ({ variants, buttonSizes, isFullWidth, icon, disabled }) => ({
+  ({ variants = 'primary', buttonSizes, isFullWidth, icon, disabled }) => ({
     ...buttonSizeStyle[buttonSizes || 'large'],
-    ...focusStyle,
+    ...focusStyle(variants),
 
     '&.MuiButton-root': {
+      minWidth: icon && '48px',
       width: isFullWidth ? '100%' : buttonSizeStyle[buttonSizes || 'large'],
     },
 
@@ -34,10 +35,6 @@ const ButtonStyled = styled(MUIButton)<ButtonProps>(
 
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
-
-    '&:hover': {
-      backgroundColor: variantStyle[variants || 'primary'].hoverBackground,
-    },
   }),
 );
 

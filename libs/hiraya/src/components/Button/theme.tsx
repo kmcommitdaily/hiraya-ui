@@ -3,28 +3,34 @@ const variantStyle = {
     background: '#305EFF',
     color: 'white',
     border: 'none',
-    hoverBackground: '#2950DA',
+    '&:hover': {
+      background: '#2950DA',
+    },
   },
   secondary: {
     background: '#FFFFF',
     color: '#305EFF',
-
     border: '1px solid #305EFF',
-    hoverBackground: '#b4bdec',
+    '&:hover': {
+      background: '#b4bdec',
+    },
   },
   tertiary: {
     background: '#BDBDBD',
     color: '#333333',
     border: 'none',
-    hoverBackground: '#9E9E9E',
+    '&:hover': {
+      background: '#9E9E9E',
+    },
   },
 };
 
-const focusStyle = {
+const focusStyle = (variants: keyof typeof variantStyle) => ({
   '&:focus': {
     boxShadow: '0 0 10px 5px #a9b7ea',
+    background: variantStyle[variants || 'primary']['&:hover'].background,
   },
-};
+});
 
 const disabledState = {
   background: '#E0E0E0',
