@@ -13,5 +13,9 @@ export default meta;
 type Story = StoryObj<typeof Accordion>;
 
 export const Demo: Story = {
-  args: {},
+  args: {
+    leading: 'number',
+    isExpanded: true,
+    label: 'Content of your header',
+  },
 };

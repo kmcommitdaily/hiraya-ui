@@ -1,18 +1,14 @@
-import {
-  Accordion as MUIAccordion,
-  AccordionSummary as MUIAccordionSummary,
-  AccordionDetails as MUIAccordionDetails,
-} from '@mui/material';
+import { leadingVisual } from './theme';
+import { AccordionStyled } from './style';
 
-const Accordion = () => {
-  return (
-    <MUIAccordion>
-      <MUIAccordionSummary>Header</MUIAccordionSummary>
-      <MUIAccordionDetails>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </MUIAccordionDetails>
-    </MUIAccordion>
-  );
+interface AccordionProps {
+  leading?: keyof typeof leadingVisual;
+  label?: string;
+  isExpanded?: boolean;
+}
+
+const Accordion: React.FC<AccordionProps> = ({ label, leading, ...props }) => {
+  return <AccordionStyled {...props}>{label}</AccordionStyled>;
 };
 
-export { Accordion };
+export { Accordion, AccordionProps };
