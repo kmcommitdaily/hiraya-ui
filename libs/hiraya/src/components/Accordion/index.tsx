@@ -7,11 +7,10 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { leadingVisual } from './theme';
 import dataJson from '../Accordion/accordion.json';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 interface AccordionProps {
   leading?: keyof typeof leadingVisual | number;
 }
-
-// const leadingMap = leadingVisual.number.map((x) => x + 1);
 
 const data = dataJson.accordionData;
 
@@ -21,7 +20,11 @@ const Accordion: React.FC<AccordionProps> = ({ leading, ...props }) => {
       {data.map((item, index) => (
         <MUIAccordion {...props} key={index}>
           <MUIAccordionSummary expandIcon={<ExpandMoreIcon />}>
-            {leading === 'number' && <MUITypography>{index + 1}</MUITypography>}
+            {leading === 'number' ? (
+              <MUITypography>{index + 1}</MUITypography>
+            ) : (
+              <PermIdentityIcon />
+            )}
             <MUITypography>{item.header}</MUITypography>
           </MUIAccordionSummary>
           <MUIAccordionDetails>
