@@ -1,28 +1,56 @@
 const variantStyle = {
   primary: {
     background: '#305EFF',
-    text: 'white',
+    color: 'white',
     border: 'none',
-    hoverBackground: '#2950DA',
+    '&:hover': {
+      background: '#2950DA',
+    },
   },
   secondary: {
     background: '#FFFFF',
-    text: '#305EFF',
+    color: '#305EFF',
     border: '1px solid #305EFF',
-    hoverBackground: '#9FA8DA',
+    '&:hover': {
+      background: '#b4bdec',
+    },
   },
   tertiary: {
     background: '#BDBDBD',
-    text: '#333333',
+    color: '#333333',
     border: 'none',
-    hoverBackground: '#9E9E9E',
+    '&:hover': {
+      background: '#9E9E9E',
+    },
   },
 };
 
-const buttonSizeStyle = {
-  small: '32px !important',
-  medium: '36px  !important',
-  large: '48px  !important',
+const focusStyle = (variants: keyof typeof variantStyle) => ({
+  '&:focus': {
+    boxShadow: '0 0 10px 5px #a9b7ea',
+    background: variantStyle[variants || 'primary']['&:hover'].background,
+  },
+});
+
+const disabledState = {
+  background: '#E0E0E0',
+  color: '#93a8f1',
+  border: 'none',
 };
 
-export { variantStyle, buttonSizeStyle };
+const buttonSizeStyle = {
+  small: {
+    padding: '6px 4px',
+    fontSize: '10px',
+  },
+  medium: {
+    padding: '8px 10px',
+    fontSize: '16px',
+  },
+  large: {
+    padding: '10px 16px',
+    fontSize: '20px',
+  },
+};
+
+export { variantStyle, buttonSizeStyle, disabledState, focusStyle };

@@ -18,7 +18,7 @@ export const Demo: Story = {
     label: 'Button',
     variants: 'primary',
     buttonSizes: 'small',
-    isFullWidth: false,
+    isFullWidth: true,
   },
 };
 
@@ -27,6 +27,6 @@ export const IconButton: Story = {
     variants: 'primary',
     buttonSizes: 'small',
     isFullWidth: false,
-    icon: <FileDownloadIcon />,
+    icon: <FileDownloadIcon fontSize="small" />,
   },
 };

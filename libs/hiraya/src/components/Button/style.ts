@@ -1,6 +1,11 @@
 import { Button as MUIButton, styled } from '@mui/material';
 
-import { variantStyle, buttonSizeStyle } from './theme';
+import {
+  variantStyle,
+  buttonSizeStyle,
+  disabledState,
+  focusStyle,
+} from './theme';
 import { ReactNode } from 'react';
 
 interface ButtonProps {
@@ -9,30 +14,27 @@ interface ButtonProps {
   buttonSizes?: keyof typeof buttonSizeStyle;
   isFullWidth?: boolean;
   icon?: ReactNode;
+  disabled?: boolean;
 }
 
 const ButtonStyled = styled(MUIButton)<ButtonProps>(
-  ({ variants, buttonSizes, isFullWidth, icon }) => ({
-    backgroundColor: variantStyle[variants || 'primary'].background,
-    color: variantStyle[variants || 'primary'].text,
-    padding: '0',
+  ({ variants = 'primary', buttonSizes, isFullWidth, icon, disabled }) => ({
+    ...buttonSizeStyle[buttonSizes || 'large'],
+    ...focusStyle(variants),
 
     '&.MuiButton-root': {
-      minWidth: icon
-        ? buttonSizeStyle[buttonSizes || 'large']
-        : isFullWidth
-        ? '112px'
-        : '92px',
-      height: buttonSizeStyle[buttonSizes || 'large'],
+      minWidth: icon && '48px',
+      width: isFullWidth ? '100%' : buttonSizeStyle[buttonSizes || 'large'],
     },
 
+    ...(disabled
+      ? { ...disabledState }
+      : { ...variantStyle[variants || 'primary'] }),
+
     borderRadius: '5px',
-    border: variantStyle[variants || 'primary'].border,
+
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
-    '&:hover': {
-      backgroundColor: variantStyle[variants || 'primary'].hoverBackground,
-    },
   }),
 );
 
