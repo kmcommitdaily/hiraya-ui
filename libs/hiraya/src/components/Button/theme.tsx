@@ -28,6 +28,7 @@ const variantStyle = {
 const focusStyle = (variants: keyof typeof variantStyle) => ({
   '&:focus': {
     boxShadow: '0 0 10px 5px #a9b7ea',
+    // once the button is 'clicked/focus' the background color for hover will remain
     background: variantStyle[variants || 'primary']['&:hover'].background,
   },
 });

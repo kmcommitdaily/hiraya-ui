@@ -23,7 +23,7 @@ const ButtonStyled = styled(MUIButton)<ButtonProps>(
     ...focusStyle(variants),
 
     '&.MuiButton-root': {
-      minWidth: icon && '48px', // we set this to override the min-width and make sure the button width will adapt to sizes
+      minWidth: icon && '48px', // we set this to overwite the min-width and make sure the button width will adapt to sizes
       width: isFullWidth ? '100%' : buttonSizeStyle[buttonSizes || 'large'],
     },
 
