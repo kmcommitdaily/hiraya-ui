@@ -1,7 +1,7 @@
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 
 const leadingVisual = {
-  number: [1, 2, 3, 4, 5],
+  number: (index: number) => index + 1,
   icon: <PermIdentityIcon />,
 };
 
