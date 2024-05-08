@@ -20,11 +20,12 @@ const Accordion: React.FC<AccordionProps> = ({ leading, ...props }) => {
       {data.map((item, index) => (
         <MUIAccordion {...props} key={index}>
           <MUIAccordionSummary expandIcon={<ExpandMoreIcon />}>
-            {leading === 'number' ? (
-              <MUITypography> {leadingVisual.number(index)}</MUITypography>
-            ) : (
-              <MUITypography> {leadingVisual.icon}</MUITypography>
-            )}
+            <MUITypography>
+              {leading === 'number'
+                ? leadingVisual.number(index)
+                : leadingVisual.icon}
+            </MUITypography>
+
             <MUITypography>{item.header}</MUITypography>
           </MUIAccordionSummary>
           <MUIAccordionDetails>
