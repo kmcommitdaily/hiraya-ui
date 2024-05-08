@@ -5,18 +5,17 @@ import {
   Typography as MUITypography,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { leadingVisual, arrayOfData } from './theme';
+import { leadingVisual } from './theme';
 
 interface AccordionProps {
   leading?: keyof typeof leadingVisual | number;
-  data?: typeof arrayOfData;
+  data: {
+    header: string;
+    content: string;
+  }[];
 }
 
-const Accordion: React.FC<AccordionProps> = ({
-  leading,
-  data = arrayOfData,
-  ...props
-}) => {
+const Accordion: React.FC<AccordionProps> = ({ leading, data, ...props }) => {
   return (
     <>
       {data.map((item, index) => (
