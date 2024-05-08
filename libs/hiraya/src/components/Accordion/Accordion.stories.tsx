@@ -14,7 +14,7 @@ type Story = StoryObj<typeof Accordion>;
 
 export const Demo: Story = {
   args: {
-    leading: 'number',
+    leading: 'icon',
     data: [
       {
         header: 'Header A',

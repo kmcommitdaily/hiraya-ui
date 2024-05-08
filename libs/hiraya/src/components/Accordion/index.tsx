@@ -1,12 +1,11 @@
-import {
-  Accordion as MUIAccordion,
-  AccordionSummary as MUIAccordionSummary,
-  AccordionDetails as MUIAccordionDetails,
-  Typography as MUITypography,
-} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { leadingVisual } from './theme';
-
+import {
+  AccordionStyled,
+  AccordionSummaryStyled,
+  TypographyStyled,
+  AccordionDetailsStyled,
+} from './style';
 interface AccordionProps {
   leading?: keyof typeof leadingVisual | number;
   data: {
@@ -15,27 +14,30 @@ interface AccordionProps {
   }[];
 }
 
+// {
+//   <ExpandMoreIcon />;
+// }
 const Accordion: React.FC<AccordionProps> = ({ leading, data, ...props }) => {
   return (
     <>
       {data.map((item, index) => (
-        <MUIAccordion {...props} key={index}>
-          <MUIAccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <MUITypography>
+        <AccordionStyled {...props} data={data} key={index}>
+          <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
+            <TypographyStyled>
               {leading === 'number'
                 ? leadingVisual.number(index)
                 : leadingVisual.icon}
-            </MUITypography>
-
-            <MUITypography>{item.header}</MUITypography>
-          </MUIAccordionSummary>
-          <MUIAccordionDetails>
-            <MUITypography>{item.content}</MUITypography>
-          </MUIAccordionDetails>
-        </MUIAccordion>
+            </TypographyStyled>
+            <br />
+            <TypographyStyled>{item.header}</TypographyStyled>
+          </AccordionSummaryStyled>
+          <AccordionDetailsStyled>
+            <TypographyStyled>{item.content}</TypographyStyled>
+          </AccordionDetailsStyled>
+        </AccordionStyled>
       ))}
     </>
   );
 };
 
-export { Accordion };
+export { Accordion, AccordionProps };
