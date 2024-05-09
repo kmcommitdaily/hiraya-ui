@@ -25,22 +25,21 @@ const AccordionStyled = styled(MUIAccordion)<AccordionProps>(
         background: 'rgba(0, 0, 0, 0.12)', // Adjust the color as needed
         marginTop: '10px',
       },
-
-      // position: 'absolute',
-      // left: 0,
-      // bottom: '-1px',
-      // right: 0,
-      // height: '1px',
-      // content: "''",
-      // opacity: 1,
-      // backgroundColor: 'rgba(0, 0, 0, 0.12)',
     },
   }),
 );
 
-// icon = <ExpandMoreIcon />;
-
-const AccordionSummaryStyled = styled(MUIAccordionSummary)(() => ({}));
+const AccordionSummaryStyled = styled(MUIAccordionSummary)(() => ({
+  '&.MuiAccordionSummary-root': {
+    '&:hover': {
+      backgroundColor: '#e0e7efc8',
+    },
+    '&:focus': {
+      boxShadow: '0 0 10px 5px #90A5BB',
+      backgroundColor: '#e0e7efc8',
+    },
+  },
+}));
 
 const TypographyStyled = styled(MUITypography)(() => ({
   marginRight: '10px',
