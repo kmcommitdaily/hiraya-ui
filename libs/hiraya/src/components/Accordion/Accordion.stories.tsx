@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Accordion } from './index';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const meta: Meta<typeof Accordion> = {
   component: Accordion,
@@ -31,6 +32,12 @@ export const Demo: Story = {
         content:
           ' Lorem ipsum dolor stit amy, malesuada lacus ex, sit amet blandit leo lobortis eget.',
       },
+      {
+        header: 'Header D',
+        content:
+          ' Lorem ipsum dolor stit amy, malesuada lacus ex, sit amet blandit leo lobortis eget.',
+      },
     ],
+    icon: <ExpandMoreIcon />,
   },
 };
