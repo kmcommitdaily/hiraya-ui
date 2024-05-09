@@ -1,8 +1,8 @@
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 
-const leadingVisual = {
+const leadingItem = {
   number: (index: number) => index + 1,
   icon: <PermIdentityIcon />,
 };
 
-export { leadingVisual };
+export { leadingItem };

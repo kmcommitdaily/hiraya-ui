@@ -1,5 +1,5 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { leadingVisual } from './theme';
+import { leadingItem } from './theme';
 import {
   AccordionStyled,
   AccordionSummaryStyled,
@@ -7,16 +7,13 @@ import {
   AccordionDetailsStyled,
 } from './style';
 interface AccordionProps {
-  leading?: keyof typeof leadingVisual | number;
+  leading?: keyof typeof leadingItem | number;
   data: {
     header: string;
     content: string;
   }[];
 }
 
-// {
-//   <ExpandMoreIcon />;
-// }
 const Accordion: React.FC<AccordionProps> = ({ leading, data, ...props }) => {
   return (
     <>
@@ -25,8 +22,8 @@ const Accordion: React.FC<AccordionProps> = ({ leading, data, ...props }) => {
           <AccordionSummaryStyled expandIcon={<ExpandMoreIcon />}>
             <TypographyStyled>
               {leading === 'number'
-                ? leadingVisual.number(index)
-                : leadingVisual.icon}
+                ? leadingItem.number(index)
+                : leadingItem.icon}
             </TypographyStyled>
             <br />
             <TypographyStyled>{item.header}</TypographyStyled>
