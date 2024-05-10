@@ -28,7 +28,7 @@ const Accordion: React.FC<AccordionProps> = ({
           <AccordionSummaryStyled expandIcon={icon}>
             <TypographyStyled>
               {leading === 'number'
-                ? leadingItem.number(index)
+                ? leadingItem.number(index) + '.'
                 : leadingItem.icon}
             </TypographyStyled>
             <br />
