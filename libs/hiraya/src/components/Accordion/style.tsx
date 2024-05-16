@@ -51,7 +51,7 @@ const AccordionSummaryStyled = styled(MUIAccordionSummary)(() => ({
 
 const TypographyStyled = styled(MUITypography)(() => ({
   '&.MuiTypography-root': {
-    marginRight: '5px',
+    margin: '5px 0',
   },
 }));
 

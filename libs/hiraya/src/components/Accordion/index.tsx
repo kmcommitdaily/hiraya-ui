@@ -31,7 +31,7 @@ const Accordion: React.FC<AccordionProps> = ({
                 ? leadingItem.number(index) + '.'
                 : leadingItem.icon}
             </TypographyStyled>
-            <br />
+
             <TypographyStyled>{item.header}</TypographyStyled>
           </AccordionSummaryStyled>
           <AccordionDetailsStyled>
