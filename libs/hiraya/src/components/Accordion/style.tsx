@@ -9,19 +9,40 @@ import {
 } from '@mui/material';
 
 import { AccordionProps } from '../Accordion/index';
-import { defaultState, defaultStyle } from './theme';
+import { primaryBg, secondaryBg } from './theme';
 
 const AccordionStyled = styled(MUIAccordion)<AccordionProps>(
   ({ ...props }) => ({
     '&.MuiAccordion-root': {
-      ...defaultStyle,
+      boxShadow: 'none',
+      '&::before': {
+        display: 'none',
+      },
+      '&::after': {
+        content: "''",
+        display: 'block',
+        width: '100%',
+        height: '1px',
+        background: primaryBg,
+        marginTop: '0',
+        marginBottom: '5px',
+      },
     },
   }),
 );
 
 const AccordionSummaryStyled = styled(MUIAccordionSummary)(() => ({
   '&.MuiAccordionSummary-root': {
-    ...defaultState,
+    margin: 0,
+    '&:hover': {
+      backgroundColor: secondaryBg,
+    },
+    '&:focus': {
+      boxShadow: '0 0 5px 3px #9aaae4',
+      backgroundColor: secondaryBg,
+      borderRadius: '5px',
+      border: '1px solid white',
+    },
   },
 
   '&.MuiAccordionSummary-content': {
