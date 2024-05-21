@@ -13,5 +13,8 @@ export default meta;
 type Story = StoryObj<typeof Alert>;
 
 export const Demo: Story = {
-  args: {},
+  args: {
+    color: 'warning',
+    severity: 'warning',
+  },
 };
