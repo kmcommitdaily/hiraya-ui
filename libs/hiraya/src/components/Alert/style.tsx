@@ -7,6 +7,12 @@ import {
 interface AlertProps extends MUIAlertProps {
   isFullWidth?: boolean;
   emphasis?: string;
+  isDismissible?: boolean;
+  showTitle?: boolean;
+  title?: string;
+  message?: string;
+  showButton?: boolean;
+  showLink?: boolean;
 }
 
 const AlertStyled = styled(MUIAlert)<AlertProps>(({ isFullWidth }) => ({
