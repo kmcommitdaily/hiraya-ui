@@ -4,7 +4,10 @@ import {
   styled,
 } from '@mui/material';
 
-interface AlertProps extends MUIAlertProps {
+import { CustomAlertColor } from './theme';
+
+interface AlertProps extends Omit<MUIAlertProps, 'color'> {
+  color?: CustomAlertColor;
   isFullWidth?: boolean;
   emphasis?: string;
   isDismissible?: boolean;
@@ -15,9 +18,9 @@ interface AlertProps extends MUIAlertProps {
   showLink?: boolean;
 }
 
-const AlertStyled = styled(MUIAlert)<AlertProps>(({ isFullWidth }) => ({
+const AlertStyled = styled(MUIAlert)<AlertProps>(({ theme, color }) => ({
   '&.MuiAlert-root': {
-    backgroundColor: isFullWidth ? 'blue' : 'red',
+    backgroundColor: color ? theme.palette[color]?.main : undefined,
   },
 }));
 

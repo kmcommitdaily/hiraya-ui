@@ -14,7 +14,8 @@ type Story = StoryObj<typeof Alert>;
 
 export const Demo: Story = {
   args: {
-    color: 'warning',
+    color: 'notice',
     severity: 'warning',
+    title: 'this is a sample alert',
   },
 };
