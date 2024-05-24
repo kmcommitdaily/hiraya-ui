@@ -7,9 +7,9 @@ import {
 import { CustomAlertColor } from './theme';
 
 interface AlertProps extends Omit<MUIAlertProps, 'color'> {
-  color?: CustomAlertColor;
+  color: CustomAlertColor;
   isFullWidth?: boolean;
-  emphasis?: string;
+  emphasis: 'subtle' | 'intense';
   isDismissible?: boolean;
   showTitle?: boolean;
   title?: string;
@@ -18,10 +18,15 @@ interface AlertProps extends Omit<MUIAlertProps, 'color'> {
   showLink?: boolean;
 }
 
-const AlertStyled = styled(MUIAlert)<AlertProps>(({ theme, color }) => ({
-  '&.MuiAlert-root': {
-    backgroundColor: color ? theme.palette[color]?.main : undefined,
-  },
-}));
+const AlertStyled = styled(MUIAlert)<AlertProps>(
+  ({ theme, color, emphasis }) => ({
+    '&.MuiAlert-root': {
+      backgroundColor:
+        color && emphasis === 'subtle'
+          ? theme.palette[color]?.secondary
+          : theme.palette[color]?.main,
+    },
+  }),
+);
 
 export { AlertStyled, AlertProps };

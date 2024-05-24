@@ -17,5 +17,6 @@ export const Demo: Story = {
     color: 'notice',
     severity: 'warning',
     title: 'this is a sample alert',
+    emphasis: 'subtle',
   },
 };

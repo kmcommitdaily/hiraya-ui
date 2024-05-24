@@ -1,5 +1,5 @@
 // theme.ts
-import { createTheme, PaletteOptions } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
 // Define custom color names
 type CustomAlertColor =
@@ -8,6 +8,11 @@ type CustomAlertColor =
   | 'notice'
   | 'information'
   | 'neutral';
+
+interface CustomPaletteColor {
+  main: string;
+  secondary?: string;
+}
 
 // Extend the palette to include custom colors
 declare module '@mui/material/styles' {
@@ -25,6 +30,10 @@ declare module '@mui/material/styles' {
     information?: PaletteOptions['primary'];
     neutral?: PaletteOptions['primary'];
   }
+
+  interface PaletteColor {
+    secondary?: string;
+  }
 }
 
 declare module '@mui/material/Alert' {
@@ -38,12 +47,12 @@ declare module '@mui/material/Alert' {
 }
 
 // Custom colors definition
-const customColors: Record<CustomAlertColor, PaletteOptions['primary']> = {
-  positive: { main: '#00A251' },
-  negative: { main: '#F04438' },
-  notice: { main: '#E9690C' },
-  information: { main: '#1291D0' },
-  neutral: { main: '#6C849D' },
+const customColors: Record<CustomAlertColor, CustomPaletteColor> = {
+  positive: { main: '#00A251', secondary: '#00d483' },
+  negative: { main: '#F04438', secondary: '#f27b7b' },
+  notice: { main: '#E9690C', secondary: '#f2a76e' },
+  information: { main: '#1291D0', secondary: '#51b5e2' },
+  neutral: { main: '#6C849D', secondary: '#95a3b2' },
 };
 
 // Create a theme including custom colors
