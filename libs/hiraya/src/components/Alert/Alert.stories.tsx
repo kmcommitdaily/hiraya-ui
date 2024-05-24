@@ -18,5 +18,6 @@ export const Demo: Story = {
     severity: 'warning',
     title: 'this is a sample alert',
     emphasis: 'subtle',
+    message: 'hola! this is a sample alert message',
   },
 };
