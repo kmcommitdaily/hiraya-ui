@@ -13,6 +13,8 @@ const Alert: React.FC<AlertProps> = ({
   title,
   emphasis,
   message,
+  showButton,
+  showTitle,
   ...props
 }) => {
   return (
@@ -22,10 +24,10 @@ const Alert: React.FC<AlertProps> = ({
         {...props}
         color={color}
         emphasis={emphasis}
-        onClose={handleClose}
+        onClose={showButton ? handleClose : undefined}
       >
-        <AlertTitleStyled> {title}</AlertTitleStyled>
-        {message}
+        <AlertTitleStyled> {showTitle ? title : undefined}</AlertTitleStyled>
+        {showTitle ? message : undefined}
       </AlertStyled>
     </ThemeProvider>
   );
