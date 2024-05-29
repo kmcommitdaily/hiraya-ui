@@ -24,15 +24,23 @@ const AlertTitleStyled = styled(MUIAlertTitle)<AlertProps>(({ message }) => ({
 }));
 
 const AlertStyled = styled(MUIAlert)<AlertProps>(
-  ({ theme, color, emphasis }) => ({
+  ({ theme, color, emphasis, isFullWidth }) => ({
     '&.MuiAlert-root': {
       backgroundColor:
         color && emphasis === 'subtle'
           ? theme.palette[color]?.secondary
           : theme.palette[color ?? 'info']?.main,
+      maxWidth: '500px',
     },
-    '&.MuiAlert-message': {
-      height: '100px',
+    '.alert-content ': {
+      display: isFullWidth ? 'flex' : 'block',
+      alignItems: isFullWidth ? 'center' : 'initial',
+      justifyContent: isFullWidth ? 'space-between' : 'initial',
+    },
+
+    '.MuiButtonBase-root': {
+      marginTop: isFullWidth ? '0' : '10px',
+      display: isFullWidth ? 'inline-block' : 'block',
     },
   }),
 );
