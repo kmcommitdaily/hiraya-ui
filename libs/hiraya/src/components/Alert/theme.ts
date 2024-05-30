@@ -1,7 +1,6 @@
-// theme.ts
 import { createTheme } from '@mui/material/styles';
 
-// Define custom color names
+// We define custom color names
 type CustomAlertColor =
   | 'positive'
   | 'negative'
@@ -55,7 +54,7 @@ const customColors: Record<CustomAlertColor, CustomPaletteColor> = {
   neutral: { main: '#6C849D', secondary: '#95a3b2' },
 };
 
-// Create a theme including custom colors
+// Theme including custom colors
 const theme = createTheme({
   palette: {
     positive: customColors.positive,

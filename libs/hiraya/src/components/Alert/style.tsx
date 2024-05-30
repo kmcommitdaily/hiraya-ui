@@ -34,13 +34,16 @@ const AlertStyled = styled(MUIAlert)<AlertProps>(
     },
     '.alert-content ': {
       display: isFullWidth ? 'flex' : 'block',
-      alignItems: isFullWidth ? 'center' : 'initial',
+      alignItems: isFullWidth ? 'start' : 'initial',
       justifyContent: isFullWidth ? 'space-between' : 'initial',
     },
 
     '.MuiButtonBase-root': {
       marginTop: isFullWidth ? '0' : '10px',
       display: isFullWidth ? 'inline-block' : 'block',
+    },
+    '.MuiIconButton-root': {
+      top: isFullWidth ? '30px' : '-13px',
     },
   }),
 );

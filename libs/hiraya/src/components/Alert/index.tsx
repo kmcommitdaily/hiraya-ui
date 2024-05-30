@@ -1,12 +1,14 @@
 import { ThemeProvider } from '@emotion/react';
 import { AlertStyled, AlertProps } from './style';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, Typography } from '@mui/material';
 import theme from './theme';
 import { AlertTitleStyled } from './style';
 import { Button } from '../Button';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
-const handleClose = () => {
-  alert('Alert is closed!');
+const handleClick = () => {
+  alert('Alert is Closed');
 };
 
 const Alert: React.FC<AlertProps> = ({
@@ -16,6 +18,7 @@ const Alert: React.FC<AlertProps> = ({
   message,
   showButton,
   showTitle,
+  isDismissible,
   ...props
 }) => {
   return (
@@ -25,16 +28,26 @@ const Alert: React.FC<AlertProps> = ({
         {...props}
         color={color}
         emphasis={emphasis}
-        onClose={showButton ? handleClose : undefined}
+        action={
+          isDismissible && (
+            <IconButton aria-label="close" size="small" onClick={handleClick}>
+              <CloseIcon />
+            </IconButton>
+          )
+        }
       >
-        <AlertTitleStyled> {showTitle ? title : undefined}</AlertTitleStyled>
-        {showTitle ? message : undefined}
-        <Button
-          label="Button"
-          buttonSizes="small"
-          variants="primary"
-          isFullWidth={false}
-        />
+        <AlertTitleStyled> {showTitle && title}</AlertTitleStyled>
+        <div className="alert-content">
+          <Typography>{showTitle && message}</Typography>
+          {showButton && (
+            <Button
+              label="Button"
+              buttonSizes="small"
+              variants="primary"
+              isFullWidth={false}
+            />
+          )}
+        </div>
       </AlertStyled>
     </ThemeProvider>
   );
