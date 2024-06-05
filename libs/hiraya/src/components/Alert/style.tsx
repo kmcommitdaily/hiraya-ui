@@ -24,7 +24,7 @@ const AlertTitleStyled = styled(MUIAlertTitle)<AlertProps>(({ message }) => ({
 }));
 
 const AlertStyled = styled(MUIAlert)<AlertProps>(
-  ({ theme, color, emphasis, isFullWidth }) => ({
+  ({ theme, color, emphasis, isFullWidth, isDismissible, showTitle }) => ({
     '&.MuiAlert-root': {
       backgroundColor:
         color && emphasis === 'subtle'
@@ -44,6 +44,9 @@ const AlertStyled = styled(MUIAlert)<AlertProps>(
     },
     '.MuiIconButton-root': {
       top: isFullWidth ? '30px' : '-13px',
+    },
+    '.MuiAlert-action': {
+      padding: !isDismissible && 0,
     },
   }),
 );
